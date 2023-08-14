@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "52cc6231-8f68-450b-9642-9cc599784b38",
+		"name": "Api compress image",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9293981"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"srmidia@srmidia.com.br\",\r\n    \"password\":\"4iSNPaeWf80zetiD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"leonardo@leonardo.net\",\r\n    \"password\":\"4iSNPaeWf80zetiD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ae-kremc44UT33fU/xld2KXvNDloNM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 May 2022 00:43:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NTI5MjEwMzYsImV4cCI6MTY1MjkyMTYzNn0.gTRUaPaH6RNjaUo2E3Phq3BMNuDO4zFQ-5Zqh921BhA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Endpoint Compress Image",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NTI5NzMwMjUsImV4cCI6MTY4NDUwOTAyNX0._JAilA6l7zKWrRFhVKyEU9ifnU7sgTTIWI_e4bj1ffU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "3902_1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/compress?quality=80&extension=.webp&width=800&height=800",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"compress"
+					],
+					"query": [
+						{
+							"key": "quality",
+							"value": "80"
+						},
+						{
+							"key": "extension",
+							"value": ".webp"
+						},
+						{
+							"key": "width",
+							"value": "800"
+						},
+						{
+							"key": "height",
+							"value": "800"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
